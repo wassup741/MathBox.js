@@ -8,6 +8,12 @@
     This example shows labelling of axes.
   -->
 
+  <style>
+  .axis-label {
+    color: red;
+  }
+  </style>
+
   <script type="text/javascript" charset="utf-8" src="../vendor/domready.js"></script>
   <script type="text/javascript" charset="utf-8" src="../build/MathBox-bundle.js"></script>
 
@@ -96,25 +102,25 @@
 
         // Labels
         .label({
-          position: [3, 2, -1],
+          position: [4.5, 0, 0],
           text: 'Alpha',
           distance: 15,
           facing: 1,
-          className: 'mathbox-label toph'
+          className: 'mathbox-label axis-label'
         })
         .label({
-          position: [-3, -2, -1],
+          position: [0, 3, 0],
           text: 'Beta',
           distance: 15,
           facing: 1,
-          className: 'mathbox-label toph'
+          className: 'mathbox-label axis-label'
         })
         .label({
-          position: [3, -2, 1],
+          position: [0, 0, 1.5],
           text: 'Gamma',
           distance: 15,
           facing: 1,
-          className: 'mathbox-label toph'
+          className: 'mathbox-label axis-label'
         })
 
       // Move axis
