@@ -94,6 +94,29 @@
           lineWidth: 1,
         })
 
+        // Labels
+        .label({
+          position: [3, 2, -1],
+          text: 'Alpha',
+          distance: 15,
+          facing: 1,
+          className: 'mathbox-label toph'
+        })
+        .label({
+          position: [-3, -2, -1],
+          text: 'Beta',
+          distance: 15,
+          facing: 1,
+          className: 'mathbox-label toph'
+        })
+        .label({
+          position: [3, -2, 1],
+          text: 'Gamma',
+          distance: 15,
+          facing: 1,
+          className: 'mathbox-label toph'
+        })
+
       // Move axis
       setTimeout(function () {
         mathbox.set('#c', { zero: true });
