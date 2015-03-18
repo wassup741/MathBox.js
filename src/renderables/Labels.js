@@ -21,7 +21,7 @@ MathBox.Renderable.Labels.prototype = _.extend(new MathBox.Renderable(null), {
       absolute: true,
       distance: 15,
       size: 1,
-      class_name: 'mathbox-labels' //,
+      className: 'mathbox-label' //,
     };
   },
 
@@ -30,16 +30,17 @@ MathBox.Renderable.Labels.prototype = _.extend(new MathBox.Renderable(null), {
         points = this.points,
         tangent = this.tangent,
         sprites = this.sprites,
-        class_name = options.class_name,
+        className = options.className,
         n = this.points.length;
 
     // Reusable vector for later.
     this._anchor = new THREE.Vector3();
 
     // Make parent object to hold all the label divs in one Object3D.
+    // TOPH SAYS: Appears to be inert; labels aren't actually appended inside.
     var element = document.createElement('div');
     var object = this.object = new MathBox.Sprite(element);
-    element.className = class_name;
+    element.className = 'mathbox-labels';
 
     // Make sprites for all labels
     _.loop(n, function (i) {
@@ -52,9 +53,7 @@ MathBox.Renderable.Labels.prototype = _.extend(new MathBox.Renderable(null), {
       var sprite = new MathBox.Sprite(element, tangent);
 
       // Position at anchor point
-      if (class_name == "mathbox-labels"){
-	  element.className = 'mathbox-label';
-      }
+  	  element.className = className;
       inner.className = 'mathbox-wrap';
       inner.style.position = 'relative';
       inner.style.display = 'inline-block';
@@ -141,4 +140,3 @@ MathBox.Renderable.Labels.prototype = _.extend(new MathBox.Renderable(null), {
 
 
 });
-

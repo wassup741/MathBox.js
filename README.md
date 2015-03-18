@@ -166,7 +166,7 @@ All mathbox arguments are optional. The following options are available for conf
 ```javascript
 {
   // Whether to allow mouse control of the camera.
-  cameraControls: true, 
+  cameraControls: true,
   // Override the class to use for mouse controls.
   controlClass: ThreeBox.OrbitControls,
   // Whether to show the mouse cursor.
@@ -175,12 +175,12 @@ All mathbox arguments are optional. The following options are available for conf
   // Whether to track resizing of the containing element.
   elementResize: true,
   // Enable fullscreen mode with 'f' (browser support is buggy)
-  fullscreen: true, 
+  fullscreen: true,
   // Render at scaled resolution, e.g. scale 2 is half the width/height.
   // Fractional values allowed.
-  scale: 1, 
+  scale: 1,
   // Enable screenshot taking with 'p'
-  screenshot: true, 
+  screenshot: true,
   // Show FPS stats in the corner
   stats: true,
 }
@@ -427,10 +427,10 @@ Label
 ```javascript
 .label({
   position: [0, 0, 0], // location of label
-  text: 'hello',       // text to be displayed 
+  text: 'hello',       // text to be displayed
   distance: 15,        // text sprite anchor point offset
   facing: 1,           // which axis tangent direction the label should be facing towards
-  class_name: 'math'   // css class name to use for the labels (leave unset for default 'mathbox-labels')
+  className: 'math'   // css class name to use for the labels (leave unset for default 'mathbox-label')
 })
 ```
 
@@ -472,7 +472,7 @@ Dependencies
 
 * vendor/ThreeBox.js -- https://github.com/unconed/ThreeBox.js (use commit tag ff838075a7bea4ba59719f845f466b9c4b2cbafe)
 * vendor/ThreeRTT.js -- https://github.com/unconed/ThreeRTT.js
-* vendor/ShaderGraph.js -- https://github.com/unconed/ShaderGraph.js 
+* vendor/ShaderGraph.js -- https://github.com/unconed/ShaderGraph.js
 
 Contributions
 -------------
@@ -487,4 +487,3 @@ Contributors:
 * fourplusone (Matthias Bartelmeß)
 * hugoferreira (Hugo Ferreira)
 * EvgenyAgafonchikov (Evgeny Agafonchikov)
-
