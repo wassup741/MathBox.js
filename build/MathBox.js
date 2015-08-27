@@ -3507,7 +3507,7 @@ MathBox.Animator.Animation.prototype = {
           if (!to) {
             return from;
           }
-          if (to.constructor == Array) {
+          if (Array.isArray(to)) {
             out = [];
             _.loop(from.length, function (i) {
               out[i] = process(from[i], to[i]);
@@ -3813,7 +3813,7 @@ MathBox.Stage.prototype = _.extend(MathBox.Stage.prototype, {
 
     // Allow literal object / array of objects
     if (typeof selector == 'object') {
-      if (selector.constructor == Array) return selector;
+      if (Array.isArray(selector)) return selector;
       return [selector];
     }
 
@@ -4827,7 +4827,7 @@ MathBox.Director.prototype = {
 
         case 'set':
           var targets = stage.select(selector);
-          var array = options.constructor == Array;
+          var array = Array.isArray(options);
           _.each(targets, function (target, i) {
             stage.set(target, array ? options[i] : options);
           });
@@ -4835,7 +4835,7 @@ MathBox.Director.prototype = {
 
         case 'animate':
           var targets = stage.select(selector);
-          var array = options.constructor == Array;
+          var array = Array.isArray(options);
           _.each(targets, function (target, i) {
             var opts = array ? options[i] : options;
             stage.animate(target, opts, animate);
@@ -5020,7 +5020,7 @@ MathBox.Style.prototype = {
   },
 
   validateColor: function (c) {
-    if (c.constructor == Array) {
+    if (Array.isArray(c)) {
       c = c.concat([0, 0, 0]);
       var color = new THREE.Color();
       return color.setRGB.apply(color, c);
@@ -5035,7 +5035,7 @@ MathBox.Style.prototype = {
   },
 
   validateMathScale: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([1, 1, 1]);
       var vector = new THREE.Vector3();
       return vector.set.apply(vector, v);
@@ -5047,7 +5047,7 @@ MathBox.Style.prototype = {
   },
 
   validateMathRotation: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       var vector = new THREE.Vector3();
       return vector.set.apply(vector, v);
@@ -5059,7 +5059,7 @@ MathBox.Style.prototype = {
   },
 
   validateMathPosition: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       var vector = new THREE.Vector3();
       return vector.set.apply(vector, v);
@@ -5071,7 +5071,7 @@ MathBox.Style.prototype = {
   },
 
   validateWorldScale: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([1, 1, 1]);
       var vector = new THREE.Vector3();
       return vector.set.apply(vector, v);
@@ -5083,7 +5083,7 @@ MathBox.Style.prototype = {
   },
 
   validateWorldRotation: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       var vector = new THREE.Vector3();
       return vector.set.apply(vector, v);
@@ -5095,7 +5095,7 @@ MathBox.Style.prototype = {
   },
 
   validateWorldPosition: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       var vector = new THREE.Vector3();
       return vector.set.apply(vector, v);
@@ -7394,7 +7394,7 @@ MathBox.Viewport.prototype = {
   },
 
   validateRotation: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       return v.slice(0, 3);
     }
@@ -7402,7 +7402,7 @@ MathBox.Viewport.prototype = {
   },
 
   validatePosition: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       return v.slice(0, 3);
     }
@@ -7816,7 +7816,7 @@ MathBox.ViewportProjective.prototype = _.extend(new MathBox.ViewportCartesian(nu
   // Attribute validators
 
   validateProjective: function (m) {
-    if (m.constructor == Array) {
+    if (Array.isArray(m)) {
       for (var j = 0; j < 3; ++j) {
         m[j] = (m[j] && m.constructor == Array && m[j]) || [];
         m[j] = m[j].concat([0, 0, 0, 0]).slice(0, 4);
