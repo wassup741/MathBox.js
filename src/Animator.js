@@ -355,7 +355,7 @@ MathBox.Animator.Animation.prototype = {
           if (!to) {
             return from;
           }
-          if (to.constructor == Array) {
+          if (Array.isArray(to)) {
             out = [];
             _.loop(from.length, function (i) {
               out[i] = process(from[i], to[i]);

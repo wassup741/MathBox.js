@@ -286,7 +286,7 @@ MathBox.Director.prototype = {
 
         case 'set':
           var targets = stage.select(selector);
-          var array = options.constructor == Array;
+          var array = Array.isArray(options);
           _.each(targets, function (target, i) {
             stage.set(target, array ? options[i] : options);
           });
@@ -294,7 +294,7 @@ MathBox.Director.prototype = {
 
         case 'animate':
           var targets = stage.select(selector);
-          var array = options.constructor == Array;
+          var array = Array.isArray(options);
           _.each(targets, function (target, i) {
             var opts = array ? options[i] : options;
             stage.animate(target, opts, animate);

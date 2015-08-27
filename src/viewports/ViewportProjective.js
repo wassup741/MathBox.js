@@ -64,7 +64,7 @@ MathBox.ViewportProjective.prototype = _.extend(new MathBox.ViewportCartesian(nu
   // Attribute validators
 
   validateProjective: function (m) {
-    if (m.constructor == Array) {
+    if (Array.isArray(m)) {
       for (var j = 0; j < 3; ++j) {
         m[j] = (m[j] && m.constructor == Array && m[j]) || [];
         m[j] = m[j].concat([0, 0, 0, 0]).slice(0, 4);

@@ -239,7 +239,7 @@ MathBox.Stage.prototype = _.extend(MathBox.Stage.prototype, {
 
     // Allow literal object / array of objects
     if (typeof selector == 'object') {
-      if (selector.constructor == Array) return selector;
+      if (Array.isArray(selector)) return selector;
       return [selector];
     }
 

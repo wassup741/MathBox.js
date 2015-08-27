@@ -49,7 +49,7 @@ MathBox.Viewport.prototype = {
   },
 
   validateRotation: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       return v.slice(0, 3);
     }
@@ -57,7 +57,7 @@ MathBox.Viewport.prototype = {
   },
 
   validatePosition: function (v) {
-    if (v.constructor == Array) {
+    if (Array.isArray(v)) {
       v = v.concat([0, 0, 0]);
       return v.slice(0, 3);
     }
