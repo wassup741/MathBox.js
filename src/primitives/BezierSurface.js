@@ -75,7 +75,7 @@ MathBox.BezierSurface.prototype = _.extend(new MathBox.Surface(null), {
         var px = 0,
             py = 0,
             pz = 0;
-        if (!(p instanceof Array)) {
+        if (!(Array.isArray(p))) {
           px = i;
           py = +p;
           pz = j;

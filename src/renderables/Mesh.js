@@ -39,7 +39,7 @@ MathBox.Renderable.Mesh.prototype = _.extend(new MathBox.Renderable(null), {
 
     // Prepare geometry
     var geometry, points = this.points;
-    if (points instanceof Array) {
+    if (Array.isArray(points)) {
       // Default, vertices-only
       geometry = this.geometry = new THREE.Geometry();
       geometry.vertices = this.points;

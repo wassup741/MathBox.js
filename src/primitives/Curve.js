@@ -95,7 +95,7 @@ MathBox.Curve.prototype = _.extend(new MathBox.Primitive(null), {
       var px = 0,
           py = 0,
           pz = 0;
-      if (!(p instanceof Array)) {
+      if (!(Array.isArray(p))) {
         px = x;
         py = +p;
       }
