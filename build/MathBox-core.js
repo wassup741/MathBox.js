@@ -2488,7 +2488,7 @@ MathBox.Curve.prototype = _.extend(new MathBox.Primitive(null), {
       var px = 0,
           py = 0,
           pz = 0;
-      if (!(p instanceof Array)) {
+      if (!(Array.isArray(p))) {
         px = x;
         py = +p;
       }
@@ -2567,7 +2567,7 @@ MathBox.Bezier.prototype = _.extend(new MathBox.Curve(null), {
       var px = 0,
           py = 0,
           pz = 0;
-      if (!(p instanceof Array)) {
+      if (!(Array.isArray(p))) {
         px = x;
         py = +p;
       }
@@ -3097,7 +3097,7 @@ MathBox.Vector.prototype = _.extend(new MathBox.Primitive(null), {
       var px = 0,
           py = 0,
           pz = 0;
-      if (!(p instanceof Array)) {
+      if (!(Array.isArray(p))) {
         px = i;
         py = +p;
         pz = 0;
@@ -3291,7 +3291,7 @@ MathBox.Surface.prototype = _.extend(new MathBox.Primitive(null), {
         var px = 0,
             py = 0,
             pz = 0;
-        if (!(p instanceof Array)) {
+        if (!(Array.isArray(p))) {
           px = x;
           py = +p;
           pz = y;
@@ -3453,7 +3453,7 @@ MathBox.BezierSurface.prototype = _.extend(new MathBox.Surface(null), {
         var px = 0,
             py = 0,
             pz = 0;
-        if (!(p instanceof Array)) {
+        if (!(Array.isArray(p))) {
           px = i;
           py = +p;
           pz = j;
@@ -3926,7 +3926,7 @@ MathBox.Renderable.Mesh.prototype = _.extend(new MathBox.Renderable(null), {
 
     // Prepare geometry
     var geometry, points = this.points;
-    if (points instanceof Array) {
+    if (Array.isArray(points)) {
       // Default, vertices-only
       geometry = this.geometry = new THREE.Geometry();
       geometry.vertices = this.points;
